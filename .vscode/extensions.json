@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+		"vscode-icons-team.vscode-icons",
+		"greatminds.gitflow4code",
+		"eamodio.gitlens",
+		"donjayamanne.githistory",
+		"mhutchie.git-graph",
+		"waldo.crs-al-language-extension",
+		"rasmus.al-var-helper",
+		"heaths.vscode-guid"
+    ]
+}
