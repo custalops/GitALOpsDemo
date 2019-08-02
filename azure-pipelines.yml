@@ -56,7 +56,7 @@ steps:
     import_action: "Overwrite"
     testfilter: $(TestFilter)
     show_available_tests: true
-  continueOnError: true    
+    continueOnError: true    
 
 - task: PublishTestResults@2
   inputs:
