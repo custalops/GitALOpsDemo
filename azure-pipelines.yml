@@ -12,6 +12,9 @@ variables:
 - name: 'artifactPath'
   value: 'C:\_AL_Apps\Agent\bin_apps\'  
 
+trigger:
+ - master
+ 
 pool:
   name: 'SelfHostedWin10'
 
