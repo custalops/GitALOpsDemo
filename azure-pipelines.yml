@@ -8,7 +8,9 @@ variables:
 - name: 'TestFilter'
   value: '50100..50149'
 - name: 'bclicense'
-  value: '.\license\license.flf'
+  value: 'C:\_AL_Apps\Agent\license\license.flf'
+- name: 'artifactPath'
+  value: 'C:\_AL_Apps\Agent\bin_apps\'
 
 trigger:
  - master
@@ -17,7 +19,7 @@ resources:
  - repo: self
  
 pool:
-  name: 'Hosted VS2017'
+  name: 'SelfHostedWin10'
 
 steps:
 - checkout: self
@@ -68,4 +70,8 @@ steps:
 - task: ALOpsDockerRemove@1
   enabled: true
   condition: always()    
-    
+
+- task: DownloadPipelineArtifact@2
+  inputs:
+    artifact: 'Dynamics 365 App'
+    path: $(artifactPath)    
