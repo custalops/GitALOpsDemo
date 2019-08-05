@@ -8,18 +8,16 @@ variables:
 - name: 'TestFilter'
   value: '50100..50149'
 - name: 'bclicense'
-  value: 'C:\_AL_Apps\Agent\license\license.flf'
-- name: 'artifactPath'
-  value: 'C:\_AL_Apps\Agent\bin_apps\'  
+  value: '.\license\license.flf'
 
 trigger:
  - master
 
 resources:
-- repo: self
+ - repo: self
  
 pool:
-  name: 'SelfHostedWin10'
+  name: 'Hosted VS2017'
 
 steps:
 - checkout: self
@@ -66,11 +64,6 @@ steps:
     testResultsFormat: XUnit
     testResultsFiles: '$(System.DefaultWorkingDirectory)\TestResults.xml'
     testRunTitle: 'BC Test Results: $(Build.BuildId)'
-
-- task: DownloadPipelineArtifact@2
-  inputs:
-    artifact: 'Dynamics 365 App'
-    path: $(artifactPath)
 
 - task: ALOpsDockerRemove@1
   enabled: true
